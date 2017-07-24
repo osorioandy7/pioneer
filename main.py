@@ -18,6 +18,8 @@ class ForumNewQuestionHandler(webapp2.RequestHandler):
     def get(self):
         template2b = env.get_template("static_folder/forum_new_question.html")
         self.response.out.write(template2b.render())
+    def post(self):
+        self.response.write("You have successfully submitted your post!")
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
