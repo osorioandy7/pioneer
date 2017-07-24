@@ -1,0 +1,12 @@
+body{
+  background-image: url("http://orig14.deviantart.net/19e4/f/2015/111/8/9/grey_forest_by_christopherpluta-d8qj32z.jpg");
+  background-repeat:no-repeat fixed;
+  background-size: cover;
+}
+
+h1{
+  /*color: white;*/
+  font-size: 100px;
+  text-align: center;
+  border: 3px white solid;
+}
