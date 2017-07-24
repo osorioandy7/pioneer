@@ -136,6 +136,7 @@
          if (place.geometry.viewport) {
            map.fitBounds(place.geometry.viewport);
 
+
          } else {
            map.setCenter(place.geometry.location);
            map.setZoom(17);  // Why 17? Because it looks good.
@@ -143,7 +144,8 @@
          }
          marker.setPosition(place.geometry.location);
          marker.setVisible(true);
-         
+
+
          var address = '';
          if (place.address_components) {
            address = [
@@ -157,6 +159,14 @@
          infowindowContent.children['place-name'].textContent = place.name;
          infowindowContent.children['place-address'].textContent = address;
          infowindow.open(map, marker);
+         var service = new google.maps.places.PlacesService(map);
+         service.nearbySearch({
+           location: {lat:map.getCenter().lat(),lng: map.getCenter().lng()},
+           radius: 100000,
+           type: ['university']
+         }, callback);
+
+         //.latLng.lat()
        });
 
        // Sets a listener on a radio button to change the filter type on Places
@@ -232,6 +242,7 @@
         var marker = new google.maps.Marker({
           map: map,
           position: place.geometry.location
+
         });
 
         google.maps.event.addListener(marker, 'click', function() {
