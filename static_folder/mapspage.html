@@ -188,7 +188,26 @@
              console.log('Checkbox clicked! New state=' + this.checked);
              autocomplete.setOptions({strictBounds: this.checked});
            });
+           function callback(results, status) {
+             if (status === google.maps.places.PlacesServiceStatus.OK) {
+               for (var i = 0; i < results.length; i++) {
+                 createMarker(results[i]);
+               }
+             }
+           }
 
+           function createMarker(place) {
+             var placeLoc = place.geometry.location;
+             var marker = new google.maps.Marker({
+               map: map,
+               position: place.geometry.location
+
+             });
+
+             google.maps.event.addListener(marker, 'click', function() {
+               infowindow.setContent(place.name);
+               infowindow.open(map, this);
+             });
 
 
       infoWindow = new google.maps.InfoWindow;
@@ -229,26 +248,7 @@
                                    'Error: Your browser doesn\'t support geolocation.');
              infoWindow.open(map);
            }
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
 
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
       }
 //MIT Lat/Long: 42.360091,-71.0963487
     </script>
