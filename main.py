@@ -1,7 +1,7 @@
 import webapp2
 import os
 import jinja2
-
+from forum_database import Poster
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class MainHandler(webapp2.RequestHandler):
@@ -17,6 +17,7 @@ class ForumHandler(webapp2.RequestHandler):
 class ForumNewQuestionHandler(webapp2.RequestHandler):
     def get(self):
         template2b = env.get_template("static_folder/forum_new_question.html")
+        user_name1 = Poster(user_name = "Thomas", email_address = "thomas@usa.gov", post_content = "yayayayayyayy")
         self.response.out.write(template2b.render())
     def post(self):
         self.response.write("You have successfully submitted your post!")
