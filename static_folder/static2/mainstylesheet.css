@@ -10,3 +10,12 @@ h1{
   text-align: center;
   border: 3px white solid;
 }
+
+.link{
+  display: inline, block;
+  padding: 1em;
+  background-color: white;
+  font-size: 20px;
+  font-family: Noto serif;
+
+}
