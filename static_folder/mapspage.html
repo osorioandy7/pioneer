@@ -34,13 +34,7 @@
           zoom: 15
         });
 
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-          location: pyrmont,
-          radius: 1000,
-          type: ['university']
-        }, callback);
+
 
       infoWindow = new google.maps.InfoWindow;
 
@@ -56,6 +50,14 @@
                  infoWindow.setContent('Location found.');
                  infoWindow.open(map);
                  map.setCenter(pos);
+                 infowindow = new google.maps.InfoWindow();
+                 var service = new google.maps.places.PlacesService(map);
+                 service.nearbySearch({
+                   location: {lat: position.coords.latitude, lng: position.coords.longitude},
+                   radius: 100000,
+                   type: ['university']
+                 }, callback);
+
                }, function() {
                  handleLocationError(true, infoWindow, map.getCenter());
                });
