@@ -12,7 +12,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(var1 = "hi"))
 
 class ForumHandler(webapp2.RequestHandler):
-    def get(self):
+    def post(self):
         template2a = template2 = env.get_template("static_folder/forum.html")
         self.response.out.write(template2a.render())
 
@@ -23,10 +23,10 @@ class ForumNewQuestionHandler(webapp2.RequestHandler):
         key_thomas = thomas.put()
         thomas_name = key_thomas.get().user_name
         self.response.out.write(template2b.render(name = thomas_name))
-    def post(self):
-        template2a = env.get_template("static_folder/mapspage.html")
-        self.response.out.write(template2a.render())
-        self.response.write("You have successfully submitted your post!" )
+    # def post(self):
+    #     template2a = env.get_template("static_folder/mapspage.html")
+    #     self.response.out.write(template2a.render())
+    #     self.response.write("You have successfully submitted your post!" )
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
