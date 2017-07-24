@@ -11,7 +11,13 @@ class MainHandler(webapp2.RequestHandler):
 
 class ForumHandler(webapp2.RequestHandler):
     def get(self):
-        template2 = env.get_template("static_folder/forum.html")
+        template2a = template2 = env.get_template("static_folder/forum.html")
+        self.response.out.write(template2a.render())
+
+class ForumNewQuestionHandler(webapp2.RequestHandler):
+    def get(self):
+        template2b = env.get_template("static_folder/forum_new_question.html")
+        self.response.out.write(template2b.render())
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
@@ -21,5 +27,6 @@ class MapHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/forum', ForumHandler),
+    ('/newforumpost', ForumNewQuestionHandler),
     ('/map', MapHandler)
 ], debug=True)
