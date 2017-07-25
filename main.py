@@ -13,16 +13,32 @@ class MainHandler(webapp2.RequestHandler):
 
 class ForumHandler(webapp2.RequestHandler):
     def get(self):
-        template2a = template2 = env.get_template("static_folder/forum.html")
+        template2a = env.get_template("static_folder/forum.html")
+        post_content = {}
         self.response.out.write(template2a.render())
 
-class ForumNewQuestionHandler(webapp2.RequestHandler):
-    def get(self):
-        template2b = env.get_template("static_folder/forum_new_question.html")
-        thomas = Poster(user_name = "Thomas", email_address = "thomas@usa.gov", post_content = "yayayayayyayy")
-        key_thomas = thomas.put()
-        thomas_name = key_thomas.get().user_name
-        self.response.out.write(template2b.render(name = thomas_name))
+    def post(self):
+        result_template = env.get_template("static_folder/forum.html")
+        template_variables = {'user_name' : self.request.get('user_name'),
+                              'email_address': self.request.get('email_address'),
+                              'post_content': self.request.get('post_content')
+                            }
+        Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address']).put()
+
+    #thePosters = Poster(user_name = template_variables['user_name'],  )
+
+        thePosts = Posts(post_content = "fdoisjfiojfdissjdkkshdfjlodsf")
+        self.response.out.write(template2a.render(post_content))
+#user_name = ndb.StringProperty()
+#email_address = ndb.StringProperty()
+#post_content = ndb.StringProperty()
+# class ForumNewQuestionHandler(webapp2.RequestHandler):
+#     def get(self):
+#         template2b = env.get_template("static_folder/forum_new_question.html")
+#         thomas = Poster(user_name = "Thomas", email_address = "thomas@usa.gov", post_content = "yayayayayyayy")
+#         key_thomas = thomas.put()
+#         thomas_name = key_thomas.get().user_name
+#         self.response.out.write(template2b.render(name = thomas_name))
     # def post(self):
     #     template2a = env.get_template("static_folder/mapspage.html")
     #     self.response.out.write(template2a.render())
@@ -46,7 +62,7 @@ class CollegeHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/forum', ForumHandler),
-    ('/newforumpost', ForumNewQuestionHandler),
+    # ('/newforumpost', ForumNewQuestionHandler),
     ('/map', MapHandler),
     ('/about', AboutUsHandler),
     ('/college', CollegeHandler)
