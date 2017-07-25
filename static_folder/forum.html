@@ -4,7 +4,20 @@
     <title></title>
   </head>
   <body>
-    Got a question or post idea?
-    <a href="http://localhost:8080/newforumpost"><button>Click here</button></a>
+    {{ post_content }}
+
+    <form method = "post" action = "forum" ><hr>
+        <label>Name of user</label><br>
+        <input type="text" name="user_name"></input>
+        {{ name }}
+        <br>
+        <label>Email</label><br>
+        <input type="text" name = "email_address"></input>
+        <br>
+        <label>Post</label><br>
+        <textarea type="text" name = "post_content"></textarea>
+        <input type="submit" value="submit answers">
+    </div>
+    </form>
   </body>
 </html>
