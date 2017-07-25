@@ -1,36 +1,38 @@
 body{
-  background-image: url("http://orig14.deviantart.net/19e4/f/2015/111/8/9/grey_forest_by_christopherpluta-d8qj32z.jpg");
-  background-repeat:no-repeat fixed;
-  background-size: cover;
+  background-color:  #ffffff;
 }
 
 h1{
-  /*color: white;*/
-  font-size: 100px;
-  text-align: center;
-  border: 3px white solid;
+  font-size: 50px;
+  text-align: left;
+  color: #bfff80;
+  font-family: 'Abel', sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+#bigdiv{
+  display:flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 
-li {
-    float: left;
+.logo{
+  font-family: 'Lobster', cursive;
+  font-weight: bolder;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.navbar{
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: 'Asap', sans-serif;
 }
 
-li a:hover {
-    background-color: #111;
+a {
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.hightlightbar{
+  display: block;
+  box-sizing: border-box;
 }
