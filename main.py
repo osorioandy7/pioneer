@@ -12,7 +12,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(var1 = "hi"))
 
 class ForumHandler(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         template2a = template2 = env.get_template("static_folder/forum.html")
         self.response.out.write(template2a.render())
 
@@ -38,4 +38,5 @@ app = webapp2.WSGIApplication([
     ('/forum', ForumHandler),
     ('/newforumpost', ForumNewQuestionHandler),
     ('/map', MapHandler)
+
 ], debug=True)
