@@ -93,11 +93,11 @@
       var infowindow;
 
       function initMap() {
-        var pyrmont = {lat: 0, lng: 0};
+        var pyrmont = {lat: 33.9950762, lng: -118.4784572};
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
-          zoom: 1
+          zoom: 10
         });
         var card = document.getElementById('pac-card');
        var input = document.getElementById('pac-input');
@@ -208,7 +208,7 @@
                infowindow.setContent(place.name);
                infowindow.open(map, this);
              });
-
+}
 
       infoWindow = new google.maps.InfoWindow;
 
@@ -239,7 +239,7 @@
                // Browser doesn't support Geolocation
                handleLocationError(false, infoWindow, map.getCenter());
              }
-}
+
 
            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
              infoWindow.setPosition(pos);
