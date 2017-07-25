@@ -24,9 +24,12 @@ class ForumHandler(webapp2.RequestHandler):
                             }
         user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text'])
 
-        user1.put()
+        
         user1_query = Poster.query()
         all_results = user1_query.fetch()
+
+
+
 
         for result in all_results:
             #self.response.out.write(i)
