@@ -16,7 +16,7 @@ h1{
 }
 
 .logo{
-  font-family: 'Lobster', cursive;
+  font-family: 'Cantata One', serif;
   font-weight: bolder;
   font-size: 60px;
   padding-left: 2em;
@@ -42,10 +42,12 @@ a {
 #maindescript{
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 500px;
   color:#b3b3b3;
-  padding-left: 500px;
-  padding-top: -1em;
+  padding-left: 600px;
+  margin-top: -200px;
+  font-size: 25px;
+
 }
 
 h2{
