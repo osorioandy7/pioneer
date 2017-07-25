@@ -24,11 +24,14 @@ class ForumHandler(webapp2.RequestHandler):
                               'email_address': self.request.get('email_address'),
                             }
         user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'])
-        post_content_key = user1.put()
+
+        user1.put()
+        user1_query = Poster.query()
+        all_results = user1_query.fetch()
 
     #thePosters = Poster(user_name = template_variables['user_name'],  )
     #thePosts = Posts(post_content = "fdoisjfiojfdissjdkkshdfjlodsf")
-        self.response.out.write(result_template.render(post_content_key))
+        self.response.out.write(result_template.render(post_content= all_results[0].email_address))
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
