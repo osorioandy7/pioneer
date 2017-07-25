@@ -19,6 +19,7 @@ h1{
   font-family: 'Lobster', cursive;
   font-weight: bolder;
   font-size: 60px;
+  padding-left: 2em;
 }
 
 h3{
@@ -40,12 +41,14 @@ a {
 
 #maindescript{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: 300px;
   color:#b3b3b3;
+  padding-left: 500px;
+  padding-top: -1em;
 }
 
 h2{
   color: #ffffff;
-  max-width: 400px;
+  max-width: 500px;
 }
