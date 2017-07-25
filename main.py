@@ -14,9 +14,11 @@ class MainHandler(webapp2.RequestHandler):
 class ForumHandler(webapp2.RequestHandler):
     # to show the page and template
     def get(self):
-        template2a = env.get_template("static_folder/forum.html")
+        template2 = env.get_template("static_folder/forum.html")
         post_content = {}
-        self.response.out.write(template2a.render())
+        self.response.out.write(template2.render())
+
+
     # to get responses from the user input boxes
     def post(self):
         result_template = env.get_template("static_folder/forum.html")
@@ -31,7 +33,11 @@ class ForumHandler(webapp2.RequestHandler):
 
     #thePosters = Poster(user_name = template_variables['user_name'],  )
     #thePosts = Posts(post_content = "fdoisjfiojfdissjdkkshdfjlodsf")
-        self.response.out.write(result_template.render(post_content= all_results[0].email_address))
+        self.response.out.write(result_template.render())
+
+        for result in all_results:
+            #self.response.out.write(i)
+            self.response.out.write(result.email_address + " ")
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
