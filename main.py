@@ -18,26 +18,41 @@ class ForumHandler(webapp2.RequestHandler):
         post_content = {}
         self.response.out.write(template2.render())
 
+        template_variables = {'user_name' : self.request.get('user_name'),
+                              'email_address': self.request.get('email_address'),
+                              'post_text': self.request.get('post_text')
+                            }
+        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text'])
+
+        user1.put()
+        user1_query = Poster.query()
+        all_results = user1_query.fetch()
+
+        for result in all_results:
+            #self.response.out.write(i)
+            self.response.out.write("<br>" + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text)
+
 
     # to get responses from the user input boxes
     def post(self):
         result_template = env.get_template("static_folder/forum.html")
         template_variables = {'user_name' : self.request.get('user_name'),
                               'email_address': self.request.get('email_address'),
+                              'post_text': self.request.get('post_text')
                             }
-        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'])
+        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'],post_text = template_variables['post_text'])
 
         user1.put()
         user1_query = Poster.query()
         all_results = user1_query.fetch()
-
+        self.response.out.write(result_template.render())
     #thePosters = Poster(user_name = template_variables['user_name'],  )
     #thePosts = Posts(post_content = "fdoisjfiojfdissjdkkshdfjlodsf")
-        self.response.out.write(result_template.render())
+
 
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write(result.email_address + " ")
+            self.response.out.write("<br>" + result.user_name + "<br>"+result.email_address + "<br>" +result.post_text)
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
