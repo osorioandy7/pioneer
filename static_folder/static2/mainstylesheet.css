@@ -1,5 +1,5 @@
 body{
-  background-color:  #ffffff;
+  background-color: #333333;
 }
 
 h1{
@@ -18,22 +18,34 @@ h1{
 .logo{
   font-family: 'Lobster', cursive;
   font-weight: bolder;
+  font-size: 60px;
+}
+
+h3{
+  color:#8cff1a;
 }
 
 .navbar{
   display: flex;
   flex-direction: row-reverse;
   font-family: 'Asap', sans-serif;
+
 }
 
 a {
   padding: 20px;
-  color: black;
+  color: #b3b3b3;
   text-decoration: none;
 }
 
-.hightlightbar{
-   display: flex;
-   
+#maindescript{
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+  color:#b3b3b3;
+}
 
+h2{
+  color: #ffffff;
+  max-width: 400px;
 }
