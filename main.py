@@ -33,10 +33,22 @@ class MapHandler(webapp2.RequestHandler):
         template3 = env.get_template("static_folder/mapspage.html")
         self.response.out.write(template3.render())
 
+class AboutUsHandler(webapp2.RequestHandler):
+    def get(self):
+        template4 = env.get_template("static_folder/aboutUs.html")
+        self.response.out.write(template4.render())
+
+class CollegeHandler(webapp2.RequestHandler):
+    def get(self):
+        template5 = env.get_template("static_folder/College101.html")
+        self.response.out.write(template5.render())
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/forum', ForumHandler),
     ('/newforumpost', ForumNewQuestionHandler),
-    ('/map', MapHandler)
+    ('/map', MapHandler),
+    ('/about', AboutUsHandler),
+    ('/college', CollegeHandler)
 
 ], debug=True)
