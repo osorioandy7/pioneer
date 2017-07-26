@@ -13,7 +13,7 @@ h1{
   color:black;
   display: flex;
   flex-direction: column;
-  padding-left: 200px;
+  padding-left: 150px;
 
 }
 
@@ -39,7 +39,7 @@ a {
 }
 
 section{
-  background-color: #bfbfbf;
+  background-color: #a6a6a6;
   border: 3px solid white;
   margin-right: 200px;
   margin-left: 200px
