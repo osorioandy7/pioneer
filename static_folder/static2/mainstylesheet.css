@@ -19,7 +19,7 @@ h1{
 .logo{
   font-family: 'Pacifico', cursive;
   font-weight: bolder;
-  font-size: 50px;
+  font-size: 35px;
   padding-left: 2em;
 }
 
@@ -30,7 +30,7 @@ h3{
 .navbar{
   display: flex;
   flex-direction: row-reverse;
-  margin-left: 900px;
+  margin-left: 850px;
   font-family: 'Asap', sans-serif;
 
 }
@@ -44,15 +44,21 @@ a {
 #maindescript{
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 700px;
   color:#b3b3b3;
-  padding-left: 600px;
-  margin-top: -200px;
-  font-size: 25px;
+  padding-left: 550px;
+  margin-top: -250px;
 
 }
 
 h2{
   color: #ffffff;
-  max-width: 500px;
+  max-width: 700px;
+  font-size: 55px;
+}
+
+p{
+  padding-left: 20px;
+  font-size: 29px;
+
 }
