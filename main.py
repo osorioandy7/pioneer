@@ -85,9 +85,7 @@ class ForumHandler(webapp2.RequestHandler):
         for result in all_results:
             #self.response.out.write(i)
             self.response.out.write("<br>" + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text)
-            logging.info('Hello, doing some lOOOOOOOO!')        
-
-        logging.info('Hello, doing some logging!')
+            logging.info('Hello, doing some lOOOOOOOO!')
 
 
     def post(self):
@@ -135,6 +133,8 @@ class CollegeHandler(webapp2.RequestHandler):
     def get(self):
         template5 = env.get_template("static_folder/College101.html")
         self.response.out.write(template5.render())
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
