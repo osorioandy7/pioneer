@@ -12,13 +12,14 @@ h1{
 #bigdiv{
   display:flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .logo{
-  font-family: 'Lobster', cursive;
+  font-family: 'Pacifico', cursive;
   font-weight: bolder;
-  font-size: 60px;
+  font-size: 50px;
   padding-left: 2em;
 }
 
@@ -29,6 +30,7 @@ h3{
 .navbar{
   display: flex;
   flex-direction: row-reverse;
+  margin-left: 900px;
   font-family: 'Asap', sans-serif;
 
 }
@@ -42,10 +44,12 @@ a {
 #maindescript{
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 500px;
   color:#b3b3b3;
-  padding-left: 500px;
-  padding-top: -1em;
+  padding-left: 600px;
+  margin-top: -200px;
+  font-size: 25px;
+
 }
 
 h2{
