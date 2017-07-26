@@ -12,7 +12,8 @@ h1{
 #bigdiv{
   display:flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .logo{
@@ -29,6 +30,7 @@ h3{
 .navbar{
   display: flex;
   flex-direction: row-reverse;
+  margin-left: 900px;
   font-family: 'Asap', sans-serif;
 
 }
