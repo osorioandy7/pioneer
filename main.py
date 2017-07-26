@@ -31,7 +31,11 @@ class MainHandler(webapp2.RequestHandler):
         template = env.get_template("static_folder/main.html")
         self.response.out.write(template.render())
 
-
+class ThreadsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("static_folder/threads.html")
+        self.response.out.write(template.render())
+        user_search_term = self.request.get("search_term")
 class ForumHandler(webapp2.RequestHandler):
     # to show the page and template
 
@@ -138,6 +142,7 @@ class CollegeHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/threads',ThreadsHandler),
     ('/forum', ForumHandler),
     # ('/newforumpost', ForumNewQuestionHandler),
     ('/map', MapHandler),
