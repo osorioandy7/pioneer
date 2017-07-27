@@ -27,12 +27,35 @@ i{
   color:#8cff1a;
   font-family: 'Pacifico', cursive;
   font-weight: bolder;
+  font-size: 70px;
 }
 
-#bio , h1{
-  max-width: 500px;
+#bio {
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   text-align: center;
   margin: auto;
+}
+
+section{
+  background-color: #cccccc;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+h2, {
+  font-size: 40px;
+}
+
+h1{
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 55px;
+    padding-left: 300px;
+  }
+
+
+p{
+  font-size: 25px;
 }
