@@ -3,7 +3,10 @@
    * element that contains the map. */
    #map {
       height: 80%;
-      width: 100%;
+      width: 80%;
+      margin: auto;
+      border: 5px solid white;
+      padding-bottom: 20px;
      }
      /* Optional: Makes the sample page fill the window. */
     html,  body {
@@ -55,7 +58,15 @@
    color: #bfff80;
    font-family: 'Abel', sans-serif;
    font-size: 55px;
-   padding-left: 600px;
+   padding-left: 550px;
+ }
+
+ h3{
+   color: white ;
+   font-family: 'Abel', sans-serif;
+   font-size: 30px;
+   padding-left: 50px;
+   text-align: center;
  }
 
 
