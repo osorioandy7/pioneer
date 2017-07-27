@@ -4,11 +4,28 @@
     <title>Place searches</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href = "static2/mapstyle.css">
-    <script type="text/javascript" src="static2/mapscript.js"></script>
+    <link rel="stylesheet" href = "/resources/mapstyle.css">
+    <script type="text/javascript" src="resources/mapscript.js"></script>
   </head>
-  <div id="map"></div>
+
   <body>
+    <div id="bigdiv">
+
+      <div class = "navbar">
+       <a href="/about">About Us</a>
+
+       <a href="/college">College 101</a>
+
+        <a href="/forum">Discussions</a>
+
+        <a href="/map">College Map</a>
+
+        <a herf="/"> Home </a>
+
+      </div>
+    </div>
+<h2 id = "locate"> Use a city to find nearby schools!</h2>
+    <div id="map"></div>
     <div class="pac-card" id="pac-card">
     <div>
       <div id="title">
@@ -26,13 +43,16 @@
           placeholder="Enter a location">
     </div>
   </div>
+  <div id = "maindescript">
+
+
   <div id="map"></div>
   <div id="infowindow-content">
     <img src="" width="16" height="16" id="place-icon">
     <span id="place-name"  class="title"></span><br>
     <span id="place-address"></span>
   </div>
-
+</div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK-tE-uH01qC1xMSNncOBJtp0tKzJKQMA&libraries=places&callback=initMap" async defer></script>
   </body>

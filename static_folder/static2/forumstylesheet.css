@@ -2,11 +2,11 @@ body{
   background-color: #333333;
   color: white;
   font-size: 1.5em;
+  font-family: Asap, sans-serif;
 }
 
 h1{
   font-size: 50px;
-  text-align: left;
   color: #bfff80;
   font-family: 'Abel', sans-serif;
 }
@@ -22,8 +22,8 @@ textarea {
 }
 
 #filter_div {
-  border: 1px white dotted;
-  border-radius: 1px;
+  border: 2px black solid;
+  border-radius: 15px;
   margin-left: 100px;
   padding: 0px 10px;
   background-color: #bfff80;
@@ -33,4 +33,28 @@ textarea {
 #bigDiv {
   display: flex;
   flex-direction: row;
+}
+
+#thread_choice {
+  font-size: 1em;
+}
+
+button {
+  font-size: 1em;
+}
+
+#bigdiv{
+  display:flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 850px;
+  font-family: 'Asap', sans-serif;
+
 }

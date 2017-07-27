@@ -8,65 +8,64 @@ $(document).ready(
   applyFilterClick
 );
 
+$('.mit').show();
+$('.uci').show();
+$('.ucsd').show();
+$('.northridge').show();
+$('.ucsc').show();
+$('.ucb').show();
+$('.cppomona').show();
+$('.cpslo').show();
+
 function applyFilter() {
   // still doesn't account for clicking both!!
-  $('.mit').show();
-  $('.uci').show();
-  $('.ucsd').show();
-  $('.northridge').show();
-  $('.ucsc').show();
-  $('.ucb').show();
+  $('.mit').hide();
+  $('.uci').hide();
+  $('.ucsd').hide();
+  $('.northridge').hide();
+  $('.ucsc').hide();
+  $('.ucb').hide();
+  $('.cppomona').hide();
+  $('.cpslo').hide();
 
   if ($('#uci').is(':checked')){
-    $('.mit').hide();
     $('.uci').show();
-    $('.ucsd').hide();
-    $('.northridge').hide();
-    $('.ucsc').hide();
-    $('.ucb').hide();
+
   }
-  else if ($('#ucsd').is(':checked')) {
-    $('.mit').hide();
-    $('.uci').hide();
+  if ($('#ucsd').is(':checked')) {
+
     $('.ucsd').show();
-    $('.northridge').hide();
-    $('.ucsc').hide();
-    $('.ucb').hide();
+
   }
-  else if ($('#mit').is(':checked')) {
+  if ($('#mit').is(':checked')) {
     $('.mit').show();
-    $('.uci').hide();
-    $('.ucsd').hide();
-    $('.northridge').hide();
-    $('.ucsc').hide();
-    $('.ucb').hide();
   }
-  else if ($('#ucb').is(':checked')) {
-    $('.mit').hide();
-    $('.uci').hide();
-    $('.ucsd').hide();
-    $('.northridge').hide();
-    $('.ucsc').hide();
+
+  if ($('#ucb').is(':checked')) {
     $('.ucb').show();
+
   }
-  else if ($('#northridge').is(':checked')) {
-    $('.mit').hide();
-    $('.uci').hide();
-    $('.ucsd').hide();
+
+  if ($('#northridge').is(':checked')) {
+
     $('.northridge').show();
-    $('.ucsc').hide();
-    $('.ucb').hide();
 
   }
-  else if ($('#ucsc').is(':checked')) {
-    $('.mit').hide();
-    $('.uci').hide();
-    $('.ucsd').hide();
-    $('.northridge').hide();
+
+  if ($('#ucsc').is(':checked')) {
     $('.ucsc').show();
-    $('.ucb').hide();
 
   }
+
+  if ($('#cppomona').is(':checked')) {
+    $('.cppomona').show();
+
+  }
+
+  if ($('#cpslo').is(':checked')) {
+    $('.cpslo').show();
+  }
+
   else {
     // $('.uci').show();
     // $('.ucsd').show();
