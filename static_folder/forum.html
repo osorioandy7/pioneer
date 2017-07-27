@@ -2,37 +2,78 @@
 <html>
   <head>
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Asap|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="/resources/forumstylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/resources/forumscript.js"></script>
   </head>
   <body>
-    <div id="posts">
+    <div id="bigdiv">
 
-      <p>{{ post_content }}
+      <div class = "navbar">
+       <a href="/about">About Us</a>
 
-      </p>
+       <a href="/college">College 101</a>
 
+        <a href="/forum">Discussions</a>
+
+        <a href="/map">College Map</a>
+
+        <a herf="/"> Home </a>
+
+      </div>
     </div>
 
-    <form method = "post" action = "forum" ><hr>
-        <label>Name of user</label><br>
-        <input type="text" name="user_name"></input>
-        {{ name }}
-        <!--<br>
-        <label>Email</label><br>
-        <input type="text" name = "email_address"></input> -->
-        <br>
-        <label>Post</label><br>
-        <textarea type="text" name = "post_text"></textarea>
-        <label>What school is this for?</label>
-        <select name="thread_choice">
-            <option value="uci">UCI</option>
-            <option value="ucsd">UCSD</option>
-        </select>
-        <input type="submit" value="submit answers">
-    </div>
+    <center><h1>Forum</h1></center>
+    <center><h3>Please feel free to ask questions and share experiences!</h3></center>
+    <div id="bigDiv">
+      <div id="form_div">
+      <form method = "post" action = "forum" ><hr>
+          <label>Name of user</label><br>
+          <input type="text" name="user_name"></input>
+          <br><br>
+          <label>Post</label><br>
+          <textarea type="text" name = "post_text"></textarea><br><br>
+          <label>What school is this for?</label>
+          <select name="thread_choice" id="thread_choice">
+              <option value="mit">MIT</option>
+              <option value="uci">UCI</option>
+              <option value="ucsd">UCSD</option>
+              <option value="ucsc">UCSC</option>
+              <option value="ucb">UCB</option>
+              <option value="northridge">Cal State Northridge</option>
+              <option value="cppomona">Cal Poly Pomona</option>
+              <option value="cpslo">Cal Poly San Luis Obispo</option>
+          </select>
+          <input type="submit" value="submit answers"><hr>
+      </div>
     </form>
-    <button type="button" id="apply_button">Apply filter</button>
+
+    <!-- <div id="filter_div">
+      <form id="filter"><center><h4>Set filter</h4></center>
+      <input type="radio" value="mit">MIT</input><br>
+      <input type="radio" value="uci">UCI</input><br>
+      <input type="radio" value="ucsd">UCSD</input><br>
+      <input type="radio" value="ucsc">UCSC</input><br>
+      <input type="radio" value="ucb">UCB</input><br>
+      <input type="radio" value="northridge">Cal State Northridge</input><br>
+      <input type="radio" value="cppomona">Cal Poly Pomona</input><br>
+      <input type="radio" value="cpslo">Cal Poly San Luis Obispo</input><br><br>
+      <center><button type="button" id="apply_button">Apply filters </button></center>
+    </div> -->
+    <div id="filter_div">
+      <form id="filter"><center><h4>Set filter</h4></center>
+      <input type="checkbox" id="mit">MIT</input><br>
+      <input type="checkbox" id="uci">UCI</input><br>
+      <input type="checkbox" id="ucsd">UCSD</input><br>
+      <input type="checkbox" id="ucsc">UCSC</input><br>
+      <input type="checkbox" id="ucb">UCB</input><br>
+      <input type="checkbox" id="northridge">Cal State Northridge</input><br>
+      <input type="checkbox" id="cppomona">Cal Poly Pomona</input><br>
+      <input type="checkbox" id="cpslo">Cal Poly San Luis Obispo</input><br><br>
+      <center><button type="button" id="apply_button">Apply filters </button></center>
+    </div>
+  </div>
+  </form>
   </body>
 </html>

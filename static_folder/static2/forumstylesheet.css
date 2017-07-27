@@ -1,9 +1,60 @@
 body{
   background-color: #333333;
   color: white;
+  font-size: 1.5em;
+  font-family: Asap, sans-serif;
+}
+
+h1{
+  font-size: 50px;
+  color: #bfff80;
+  font-family: 'Abel', sans-serif;
 }
 
 input {
-  min-height: 200px;
-  min-width: 600px;
+  min-height: 20px;
+  min-width: 100px;
+}
+
+textarea {
+  min-height: 50px;
+  min-width: 100px;
+}
+
+#filter_div {
+  border: 2px black solid;
+  border-radius: 15px;
+  margin-left: 100px;
+  padding: 0px 10px;
+  background-color: #bfff80;
+  color: black;
+}
+
+#bigDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+#thread_choice {
+  font-size: 1em;
+}
+
+button {
+  font-size: 1em;
+}
+
+#bigdiv{
+  display:flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 850px;
+  font-family: 'Asap', sans-serif;
+
 }
