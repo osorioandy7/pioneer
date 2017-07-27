@@ -1,0 +1,17 @@
+body{
+  background-color: #333333;
+}
+h1{
+  color: #bfff80;
+  font-family: 'Abel', sans-serif;
+  font-size: 55px;
+  padding-left: 550px;
+}
+
+h2{
+  color: white ;
+  font-family: 'Abel', sans-serif;
+  font-size: 30px;
+  padding-left: 50px;
+  text-align: center;
+}
