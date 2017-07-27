@@ -3,6 +3,7 @@ body{
   color: white;
   font-size: 1.5em;
   font-family: Asap, sans-serif;
+  margin-left: 70px;
 }
 
 h1{
@@ -11,14 +12,18 @@ h1{
   font-family: 'Abel', sans-serif;
 }
 
+#form_div {
+
+}
+
 input {
   min-height: 20px;
-  min-width: 100px;
+  min-width: 300px;
 }
 
 textarea {
   min-height: 50px;
-  min-width: 100px;
+  min-width: 800px;
 }
 
 #filter_div {
@@ -64,10 +69,14 @@ button {
   font-size: 0.7em;
 }
 
-.navbar{
+.navbar {
   display: flex;
   flex-direction: row-reverse;
-  margin-left: 800px;
+  margin-left: 700px;
   font-family: 'Asap', sans-serif;
 
+}
+
+#form_user_input {
+  margin-left: 0px;
 }
