@@ -16,6 +16,9 @@ function applyFilter() {
   $('.northridge').show();
   $('.ucsc').show();
   $('.ucb').show();
+  $('.cppomona').show();
+  $('.cpslo').show();
+
 
   if ($('#uci').is(':checked')){
     $('.mit').hide();
@@ -24,6 +27,8 @@ function applyFilter() {
     $('.northridge').hide();
     $('.ucsc').hide();
     $('.ucb').hide();
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
   else if ($('#ucsd').is(':checked')) {
     $('.mit').hide();
@@ -32,6 +37,8 @@ function applyFilter() {
     $('.northridge').hide();
     $('.ucsc').hide();
     $('.ucb').hide();
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
   else if ($('#mit').is(':checked')) {
     $('.mit').show();
@@ -40,7 +47,10 @@ function applyFilter() {
     $('.northridge').hide();
     $('.ucsc').hide();
     $('.ucb').hide();
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
+
   else if ($('#ucb').is(':checked')) {
     $('.mit').hide();
     $('.uci').hide();
@@ -48,7 +58,10 @@ function applyFilter() {
     $('.northridge').hide();
     $('.ucsc').hide();
     $('.ucb').show();
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
+
   else if ($('#northridge').is(':checked')) {
     $('.mit').hide();
     $('.uci').hide();
@@ -56,8 +69,10 @@ function applyFilter() {
     $('.northridge').show();
     $('.ucsc').hide();
     $('.ucb').hide();
-
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
+
   else if ($('#ucsc').is(':checked')) {
     $('.mit').hide();
     $('.uci').hide();
@@ -65,8 +80,32 @@ function applyFilter() {
     $('.northridge').hide();
     $('.ucsc').show();
     $('.ucb').hide();
-
+    $('.cppomona').hide();
+    $('.cpslo').hide();
   }
+
+  else if ($('#cppomona').is(':checked')) {
+    $('.mit').hide();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').hide();
+    $('.cppomona').show();
+    $('.cpslo').hide();
+  }
+
+  else if ($('#cpslo').is(':checked')) {
+    $('.mit').hide();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').hide();
+    $('.cppomona').hide();
+    $('.cpslo').show();
+  }
+
   else {
     // $('.uci').show();
     // $('.ucsd').show();
