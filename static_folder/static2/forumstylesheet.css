@@ -1,9 +1,36 @@
 body{
   background-color: #333333;
   color: white;
+  font-size: 1.5em;
+}
+
+h1{
+  font-size: 50px;
+  text-align: left;
+  color: #bfff80;
+  font-family: 'Abel', sans-serif;
 }
 
 input {
-  min-height: 200px;
-  min-width: 600px;
+  min-height: 20px;
+  min-width: 100px;
+}
+
+textarea {
+  min-height: 50px;
+  min-width: 100px;
+}
+
+#filter_div {
+  border: 1px white dotted;
+  border-radius: 1px;
+  margin-left: 100px;
+  padding: 0px 10px;
+  background-color: #bfff80;
+  color: black;
+}
+
+#bigDiv {
+  display: flex;
+  flex-direction: row;
 }

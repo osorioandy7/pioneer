@@ -137,7 +137,7 @@ class ForumHandler(webapp2.RequestHandler):
             #self.response.out.write(i)
             self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
             logging.info(type(template_variables['thread_choice']))
-            logging.info(template_variables['thread_choice'] + "\tYO")
+            logging.info(template_variables['thread_choice'] + "\tplease")
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):

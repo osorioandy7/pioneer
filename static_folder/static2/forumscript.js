@@ -1,9 +1,7 @@
-console.log("hihihiihihi");
 
 
 function applyFilterClick() {
   $('#apply_button').click(applyFilter);
-  console.log("CONSOLEELELELELELLELE")
 }
 
 $(document).ready(
@@ -12,19 +10,62 @@ $(document).ready(
 
 function applyFilter() {
   // still doesn't account for clicking both!!
+  $('.mit').show();
   $('.uci').show();
   $('.ucsd').show();
-  console.log("hehhehehehsxfdsf");
+  $('.northridge').show();
+  $('.ucsc').show();
+  $('.ucb').show();
 
   if ($('#uci').is(':checked')){
-    $('.ucsd').hide();
+    $('.mit').hide();
     $('.uci').show();
-    console.log("U C I");
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').hide();
   }
   else if ($('#ucsd').is(':checked')) {
+    $('.mit').hide();
     $('.uci').hide();
     $('.ucsd').show();
-    console.log("U C S D");
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').hide();
+  }
+  else if ($('#mit').is(':checked')) {
+    $('.mit').show();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').hide();
+  }
+  else if ($('#ucb').is(':checked')) {
+    $('.mit').hide();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').hide();
+    $('.ucb').show();
+  }
+  else if ($('#northridge').is(':checked')) {
+    $('.mit').hide();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').show();
+    $('.ucsc').hide();
+    $('.ucb').hide();
+
+  }
+  else if ($('#ucsc').is(':checked')) {
+    $('.mit').hide();
+    $('.uci').hide();
+    $('.ucsd').hide();
+    $('.northridge').hide();
+    $('.ucsc').show();
+    $('.ucb').hide();
+
   }
   else {
     // $('.uci').show();
