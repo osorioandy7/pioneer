@@ -1,0 +1,38 @@
+body{
+  background-color: #333333;
+}
+
+#bigdiv{
+  display:flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 850px;
+  font-family: 'Asap', sans-serif;
+
+}
+
+a {
+  padding: 20px;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+i{
+  color:#8cff1a;
+  font-family: 'Pacifico', cursive;
+  font-weight: bolder;
+}
+
+#bio , h1{
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
