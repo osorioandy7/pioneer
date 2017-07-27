@@ -6,7 +6,7 @@ h1{
   color: #bfff80;
   font-family: 'Abel', sans-serif;
   font-size: 55px;
-  padding-left: 200px;
+
 }
 
 .words{
@@ -39,9 +39,14 @@ a {
 }
 
 li a {
-  color: blue;
+  color: navy;
   text-decoration: underline;
   padding: 0px;
+  font-size: 20px;
+}
+
+ol {
+  font-size: 20px;
 }
 
 section{
