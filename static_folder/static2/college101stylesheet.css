@@ -38,9 +38,20 @@ a {
   text-decoration: none;
 }
 
+li a {
+  color: blue;
+  text-decoration: underline;
+  padding: 0px;
+}
+
 section{
-  background-color: #a6a6a6;
-  border: 3px solid white;
+  background-color: #cccccc;
+  border: 3px solid grey;
   margin-right: 200px;
   margin-left: 200px
+}
+
+ p{
+  width: 700px;
+  font-size: 20px;
 }
