@@ -5,7 +5,7 @@ from forum_database import Poster
 import logging
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
+import urllib2
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -36,6 +36,7 @@ class ThreadsHandler(webapp2.RequestHandler):
         template = env.get_template("static_folder/threads.html")
         self.response.out.write(template.render())
         user_search_term = self.request.get("search_term")
+
 class ForumHandler(webapp2.RequestHandler):
     # to show the page and template
 
@@ -75,20 +76,23 @@ class ForumHandler(webapp2.RequestHandler):
         template_variables = {
                         'user_name' : self.request.get('user_name'),
                         'email_address': user.email(),
-                        'post_text': self.request.get('post_text')
+                        'post_text': self.request.get('post_text'),
+                        'thread_choice': self.request.get('thread_choice')
                             }
-        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text']).put()
+        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text'], thread_choice = template_variables['thread_choice']).put()
 
 
         user1_query = Poster.query()
         all_results = user1_query.fetch()
+
+
 
         signout_link_html = '<a href="%s">sign out</a>' % (
             users.create_logout_url('/forum'))
         self.response.out.write(signout_link_html)
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<br>" + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text)
+            self.response.out.write("<div id='%s'><br>" % (template_variables['thread_choice']) + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
             logging.info('Hello, doing some lOOOOOOOO!')
 
 
@@ -103,7 +107,9 @@ class ForumHandler(webapp2.RequestHandler):
         template_variables = {
                         'user_name' : self.request.get('user_name'),
                         'email_address': user.email(),
-                        'post_text': self.request.get('post_text')
+                        'post_text': self.request.get('post_text'),
+                        'thread_choice': self.request.get('thread_choice')
+
                             }
         #user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text']).put()
 
@@ -116,12 +122,22 @@ class ForumHandler(webapp2.RequestHandler):
         self.response.out.write(signout_link_html)
 
 
+
         logging.info('Hello, doing some logging!')
+
+        #uci_query = Poster.thread_choice
+        #uci_results = uci_query.fetch()
+        #
+        #ucsd_query = Poster.query("thread_choice" "ucsd")
+        #ucsd_results = ucsd_query.fetch()
+
+
 
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<br>" + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text)
-            logging.info('Hello, doing some lOOOOOOOO!')
+            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
+            logging.info(type(template_variables['thread_choice']))
+            logging.info(template_variables['thread_choice'] + "\tYO")
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):

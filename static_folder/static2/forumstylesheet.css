@@ -1,0 +1,9 @@
+body{
+  background-color: #333333;
+  color: white;
+}
+
+input {
+  min-height: 200px;
+  min-width: 600px;
+}

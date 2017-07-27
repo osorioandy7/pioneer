@@ -3,9 +3,17 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="/resources/forumstylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/resources/forumscript.js"></script>
   </head>
   <body>
-    <p>{{ post_content }}</p>
+    <div id="posts">
+
+      <p>{{ post_content }}
+
+      </p>
+
+    </div>
 
     <form method = "post" action = "forum" ><hr>
         <label>Name of user</label><br>
@@ -17,8 +25,14 @@
         <br>
         <label>Post</label><br>
         <textarea type="text" name = "post_text"></textarea>
+        <label>What school is this for?</label>
+        <select name="thread_choice">
+            <option value="uci">UCI</option>
+            <option value="ucsd">UCSD</option>
+        </select>
         <input type="submit" value="submit answers">
     </div>
     </form>
+    <button type="button" id="apply_button">Apply filter</button>
   </body>
 </html>
