@@ -3,7 +3,7 @@
    * element that contains the map. */
    #map {
       height: 80%;
-      width: 60%;
+      width: 100%;
      }
      /* Optional: Makes the sample page fill the window. */
     html,  body {
@@ -20,29 +20,11 @@
    background-color: #333333;
  }
 
- h1{
-   font-size: 50px;
-   text-align: left;
-   color: #bfff80;
-   font-family: 'Abel', sans-serif;
- }
-
  #bigdiv{
    display:flex;
    justify-content: space-between;
    margin: 0;
    padding: 0;
- }
-
- .logo{
-   font-family: 'Pacifico', cursive;
-   font-weight: bolder;
-   font-size: 35px;
-   padding-left: 2em;
- }
-
- h3{
-   color:#8cff1a;
  }
 
  .navbar{
@@ -70,9 +52,10 @@
  }
 
  h2{
-   color: #ffffff;
-   max-width: 700px;
+   color: #bfff80;
+   font-family: 'Abel', sans-serif;
    font-size: 55px;
+   padding-left: 600px;
  }
 
 
