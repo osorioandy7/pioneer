@@ -55,3 +55,8 @@ section{
   width: 700px;
   font-size: 20px;
 }
+
+h3{
+  text-decoration: underline;
+  font-weight: normal;
+}
