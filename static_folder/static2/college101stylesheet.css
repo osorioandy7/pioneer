@@ -48,12 +48,18 @@ li a {
 ol {
   font-size: 20px;
 }
+.slider{
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+}
 
 section{
   background-color: #cccccc;
   border: 3px solid grey;
   margin-right: 200px;
-  margin-left: 200px
+  margin-left: 200px;
 }
 
  p{

@@ -3,6 +3,8 @@
   <head>
     <title>College 101</title>
     <link rel="stylesheet" href = "/resources/college101stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="resources/college101.js"></script>
   </head>
   <body>
 
@@ -19,28 +21,32 @@
 <h1> <center>College 101 </center></h1>
 
   <section class="words" >
-    <h2> Picking a College</h2>
+<button class = "slider" onclick="slideCollege()">    <h2> Picking a College</h2></button>
+    <div id = "pickCollege">
+
     <p> When picking a college, it is important to take a look at the campus, majors/minors offered, and tuition. However,
       it is vital to never settle for a school based on acceptance; just because students are accepted does not mean
       they must attend. Follow your heart and logic when it comes to picking a college, or you might be in a place
       you dislike (but don't worry, you have our advice to guide you). If possible, try to visit the colleges you are interested in
       so you get a good feeling of what campus and student life is like.</p>
     <p>Interested in a college? Use our<i> College Map</i> to look at the location of the your college and the area around it!! </p>
-  <h2> Picking a Major </h2>
+  </div>
+  <button class = "slider" onclick="slideMajor()"><h2> Picking a Major </h2></button>
+  <div id = "pickMajor">
   <p> Have no idea what you want to study? That's okay!
      You do not have to know right away; some schools even encourage students to
      wait until their second year to declare a major. The best thing to do in
      this situation is to find the intersection between your passions and your skills. This means taking classes
      on subjects you find interesting and joining different clubs in order to experience a variety of fields.
      Students can always change their major. </p>
+       </div>
 
-<div>
-  <h2>Paying for College </h2>
+<button class = "slider" onclick="slideFinancial()">  <h2>Paying for College </h2></button>
+  <div id = "pickFinancial">
   <h3>What is Financial Aid? </h3>
   <p>Financial aid is money that can help students pay for college tuition.
      There are different types of aid students can receive; loans require payment at a later time and scholarships
      and grants are free money. </p>
-
   <h3>Importance of Financial Aid</h3>
   <p> Financial aid is important because it allows students to attend college affordably. In fact,
   students who consider their dream schools too expensive can usually receive financial aid to help with tuition costs.</p>
@@ -60,16 +66,19 @@
     <li>They are free to apply to and can cover tuition costs that financial aid from the government and your school
   many not. </li>
 </ol>
+</div>
 
-  <div class = "links2">
-    <h2>Helpful Links</h2>
+
+    <button class = "slider" onclick="slideLinks()">  <h2>Helpful Links</h2></button>
+    <div id = "pickLinks">
     <ul>
         <li><a href="https://myscholly.com/">Scholly</a></li>
         <li><a href="https://fafsa.ed.gov/">FAFSA Appilication</a></li>
         <li><a href="https://bigfuture.collegeboard.org/pay-for-college/financial-aid-101/how-to-complete-the-fafsa">How to Complete the FAFSA</a></li>
         <li><a href="https://bigfuture.collegeboard.org/pay-for-college/financial-aid-101/financial-aid-faqs">Financial Aids FAQs</a></li>
       </ul>
-</div>
+    </div>
+
 
 </section>
 
