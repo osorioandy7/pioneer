@@ -65,7 +65,10 @@ class ForumHandler(webapp2.RequestHandler):
         else:
             self.response.write('''
                 <style>
+                a{
+                color: white;
 
+                }
                 body{
                   background-color: #333333;
                 }
