@@ -5,7 +5,9 @@ from forum_database import Poster
 import logging
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from google.appengine.api import search
 import urllib2
+from datetime import datetime
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -43,7 +45,6 @@ class ForumHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         # If the user is logged in...
-
         if user:
             email_address = user.nickname()
             # We could also do a standard query, but ID is special and it
@@ -71,18 +72,20 @@ class ForumHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         template2 = env.get_template("static_folder/forum.html")
         post_content = {}
-        self.response.out.write(template2.render())
 
+        self.response.out.write(template2.render())
+        now_time = datetime.now()
         template_variables = {
                         'user_name' : self.request.get('user_name'),
                         'email_address': user.email(),
                         'post_text': self.request.get('post_text'),
-                        'thread_choice': self.request.get('thread_choice')
+                        'thread_choice': self.request.get('thread_choice'),
+                        'date': now_time
                             }
-        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text'], thread_choice = template_variables['thread_choice']).put()
+        user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text'], thread_choice = template_variables['thread_choice'], date = template_variables['date']).put()
 
 
-        user1_query = Poster.query()
+        user1_query = Poster.query().order(-Poster.date)
         all_results = user1_query.fetch()
 
 
@@ -90,10 +93,18 @@ class ForumHandler(webapp2.RequestHandler):
         signout_link_html = '<a href="%s">sign out</a>' % (
             users.create_logout_url('/forum'))
         self.response.out.write(signout_link_html)
+
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<div id='%s'><br>" % (template_variables['thread_choice']) + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
-            logging.info('Hello, doing some lOOOOOOOO!')
+            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + str(result.date) +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
+            logging.info(type(template_variables['thread_choice']))
+            logging.info(template_variables['thread_choice'] + "\tplease")
+            logging.info(result.date)
+
+
+
+
+
 
 
     def post(self):
@@ -102,19 +113,22 @@ class ForumHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         template2 = env.get_template("static_folder/forum.html")
         post_content = {}
+        now_time = datetime.now()
+
         self.response.out.write(template2.render())
 
         template_variables = {
                         'user_name' : self.request.get('user_name'),
                         'email_address': user.email(),
                         'post_text': self.request.get('post_text'),
-                        'thread_choice': self.request.get('thread_choice')
+                        'thread_choice': self.request.get('thread_choice'),
+                        'date': now_time
 
                             }
         #user1 = Poster(user_name = template_variables['user_name'], email_address= template_variables['email_address'], post_text = template_variables['post_text']).put()
 
 
-        user1_query = Poster.query()
+        user1_query = Poster.query().order(-Poster.date)
         all_results = user1_query.fetch()
 
         signout_link_html = '<a href="%s">sign out</a>' % (
@@ -133,11 +147,15 @@ class ForumHandler(webapp2.RequestHandler):
 
 
 
+
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
+            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + str(result.date) +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
             logging.info(type(template_variables['thread_choice']))
             logging.info(template_variables['thread_choice'] + "\tplease")
+            logging.info(result.date)
+
+
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
