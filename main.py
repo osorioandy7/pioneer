@@ -63,8 +63,49 @@ class ForumHandler(webapp2.RequestHandler):
         # Otherwise, the user isn't logged in!
         else:
             self.response.write('''
-                Please log in to use our site! <br>
-                <a href="%s">Sign in</a>''' % (
+                <style>
+
+                body{
+                  background-color: #333333;
+                }
+                h1{
+                  display: flex;
+                  color: #bfff80;
+                  font-family: 'Abel', sans-serif;
+                  font-size: 45px;
+                  justify-content: center;
+                }
+
+                h2{
+                  display: flex;
+                  color: white ;
+                  font-family: 'Abel', sans-serif;
+                  font-size: 30px;
+                  justify-content: center;
+                  text-align: center;
+                }
+                a{
+                  display: flex;
+                  justify-content: center;
+                  font-size: 45;
+
+                }
+
+
+
+                </style>
+                  <head>
+                    <meta charset="utf-8">
+                    <title>Sign up</title>
+
+
+                  </head>
+                  <body>
+                    <h1> Forums </hr>
+                      <h2> Sign up to join different discussion boards where you can ask questions, share stories, and give advice!
+                       </h2>
+                      <a href="%s">Sign in</a>
+                  </body>''' % (
                     users.create_login_url('/forum')))
 
     def getForum(self):

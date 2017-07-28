@@ -13,10 +13,16 @@ h1{
   color:black;
   display: flex;
   flex-direction: column;
-  padding-left: 150px;
+  justify-content: center;
 
 }
+.words p{
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+}
 #bigdiv{
   display:flex;
   justify-content: space-between;
