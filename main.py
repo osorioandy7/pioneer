@@ -137,12 +137,10 @@ class ForumHandler(webapp2.RequestHandler):
 
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + str(result.date) +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
+            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
             logging.info(type(template_variables['thread_choice']))
             logging.info(template_variables['thread_choice'] + "\tplease")
             logging.info(result.date)
-
-
 
 
 
@@ -183,15 +181,15 @@ class ForumHandler(webapp2.RequestHandler):
         #uci_query = Poster.thread_choice
         #uci_results = uci_query.fetch()
         #
-        #ucsd_query = Poster.query("thread_choice" "ucsd")
-        #ucsd_results = ucsd_query.fetch()
+    #ucsd_query = Poster.query("thread_choice" "ucsd")
+    #ucsd_results = ucsd_query.fetch()
 
 
 
 
         for result in all_results:
             #self.response.out.write(i)
-            self.response.out.write("<div class='%s'><br>" % (result.thread_choice) + str(result.date) +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
+            self.response.out.write("<div class='%s'><br>" % (result.thread_choice)  +"<br>"+ result.user_name + "<br>" + result.email_address + "<br>" + result.post_text + "</div>")
             logging.info(type(template_variables['thread_choice']))
             logging.info(template_variables['thread_choice'] + "\tplease")
             logging.info(result.date)
