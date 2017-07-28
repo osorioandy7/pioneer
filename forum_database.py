@@ -5,3 +5,4 @@ class Poster(ndb.Model):
     email_address = ndb.StringProperty()
     post_text = ndb.StringProperty()
     thread_choice = ndb.StringProperty()
+    date = ndb.DateTimeProperty()
