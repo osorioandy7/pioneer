@@ -13,12 +13,11 @@ h1{
 }
 
 #form_div {
-
 }
 
 input {
   min-height: 20px;
-  min-width: 300px;
+  min-width: 40px;
 }
 
 textarea {
@@ -30,9 +29,11 @@ textarea {
   border: 2px black solid;
   border-radius: 15px;
   margin-left: 100px;
-  padding: 0px 10px;
+  padding-right: 10px;
+
   background-color: #bfff80;
   color: black;
+
 }
 
 #bigDiv {
@@ -79,4 +80,8 @@ button {
 
 #form_user_input {
   margin-left: 0px;
+}
+
+.checks #mit {
+  margin-left: -12vw;
 }
